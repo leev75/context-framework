@@ -1,15 +1,36 @@
-# Python-generated files
-__pycache__/
-*.py[oc]
-build/
-dist/
-wheels/
-*.egg-info
-
-# server connection files
-data/*.db
-
-
-# Virtual environments
-.venv
+# Environment / secrets
 .env
+*.env
+.env.*
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+.Python
+
+# Virtual environment
+.venv/
+venv/
+
+# uv
+# (uv.lock is intentionally committed — do not ignore it,
+# it pins dependency versions for reproducible installs)
+
+# Testing
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Data / local databases
+data/*.db
+data/*.sqlite
+data/*.sqlite3
+
+# IDE / editor
+.vscode/
+.idea/
+
+# OS cruft
+.DS_Store
+Thumbs.db
