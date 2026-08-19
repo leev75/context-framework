@@ -1,0 +1,31 @@
+[project]
+name = "context-framework"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+authors = [
+    { name = "leev75", email = "dheakhelil75@gmail.com" }
+]
+requires-python = ">=3.13"
+dependencies = [
+    "groq>=1.6.0",
+    "pydantic>=2.13.4",
+    "python-dotenv>=1.2.3",
+]
+
+
+[tool.uv]
+package = false
+
+[build-system]
+requires = ["uv_build>=0.12.3,<0.13.0"]
+build-backend = "uv_build"
+
+[dependency-groups]
+dev = [
+    "pytest>=9.1.1",
+]
+
+
+[tool.pytest.ini_options]
+pythonpath = ["."]
