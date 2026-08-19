@@ -34,3 +34,9 @@ data/*.sqlite3
 # OS cruft
 .DS_Store
 Thumbs.db
+
+# agent 
+.Agent.md
+
+#git repo 
+.gitignore
