@@ -5,7 +5,7 @@ from groq import Groq
 from dotenv import load_dotenv
 from framework.models.models import Message
 
-_MODEL = "llama-3.3-70b-versatile"
+_MODEL = "qwen/qwen3.6-27b"
 _MAX_RETRIES = 2  # total attempts = 1 initial + 2 retries = 3
 
 

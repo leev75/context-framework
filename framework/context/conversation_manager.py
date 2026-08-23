@@ -33,7 +33,7 @@ class ConversationManager:
         created_at = datetime.now(timezone.utc).isoformat()
         insert_session(self.db_path, session_id=session_id, created_at=created_at)
         return session_id
-giot
+
     def add_message(self, session_id: str, role: Literal["user", "assistant", "system"], content: str) -> Message:
         """
         Construct a Message (auto-populating id/timestamp, token_count=0),

@@ -8,6 +8,7 @@ authors = [
 ]
 requires-python = ">=3.13"
 dependencies = [
+    "fastapi[standard]>=0.141.1",
     "groq>=1.6.0",
     "pydantic>=2.13.4",
     "python-dotenv>=1.2.3",
@@ -29,3 +30,6 @@ dev = [
 
 [tool.pytest.ini_options]
 pythonpath = ["."]
+
+[tool.fastapi]
+entrypoint = "app.api.main:app"
