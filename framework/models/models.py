@@ -1,8 +1,8 @@
 import uuid
 from datetime import datetime, timezone
 from typing import Literal
-
-from pydantic import BaseModel, Field
+from framework.budget.tokenCount import count_tokens
+from pydantic import BaseModel, Field, model_validator
 
 
 class Message(BaseModel):
@@ -13,6 +13,11 @@ class Message(BaseModel):
     timestamp: datetime = Field(default_factory=lambda: datetime.now(timezone.utc))
     token_count: int = 0
 
+    @model_validator(mode="after")
+    def _compute_token_count(self) -> "Message":
+        if self.token_count == 0:
+            self.token_count = count_tokens(self.content, model="llama-3.3-70b-versatile")
+        return self
 
 class RetrievedItem(BaseModel):
     text: str

@@ -4,6 +4,7 @@ from framework.context.conversation_manager import (
     ConversationManager,
     SessionNotFoundError,
 )
+from framework.models.models import Message
 
 
 def test_create_session_returns_unique_id():
@@ -63,3 +64,9 @@ def test_get_history_unknown_session_raises():
     manager = ConversationManager()
     with pytest.raises(SessionNotFoundError):
         manager.get_history("nonexistent-id")
+
+
+# Example usage OF the Message class and token counting
+def test_token_count_is_computed_on_creation():
+    message = Message(session_id="s1", role="user", content="Hello, world!")
+    assert message.token_count == 4  # matches ground truth from tokenCount tests
